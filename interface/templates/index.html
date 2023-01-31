@@ -1,0 +1,93 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>codeFormer</title>
+
+</head>
+
+<body>
+
+    <div class="spinner-border text-danger" id="loading" role="status">
+    </div>
+
+    <div style="padding: 10px; background-image: url(' {% static 'image/cool-background.svg' %}'); background-repeat:
+        no-repeat; background-position: center; background-size: cover;">
+
+        <div class="container" style="padding: 20px; background-color: #b33c69; border-radius: 25px;">
+            <h1 style="text-align: center; color: azure;">CodeFormer: Robust Face Restoration and Enhancement Network
+            </h1>
+            <span style="color: azure">
+                Towards Robust Blind Face Restoration with Codebook Lookup Transformer (NeurIPS 2022)
+                CodeFormer is a robust face restoration algorithm for old photos or AI-generated faces.
+                
+            </span>
+
+        </div>
+        <div class="container">
+            <div class="row" style="height: 40%;">
+
+                <div class="col-md-5 col-xxl-6 d-flex "
+                    style="width: 40%; margin: 20px; padding: 40px; background-color: #9c003c; border-radius: 25px;">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-secondary">upload</button>
+                    </form>
+
+
+                </div>
+                <div class="col-md-5 col-xxl-6 d-flex " style="width: 40%; margin: 20px; padding: 40px;">
+                    <img src="{% static 'image/CodeFormer_logo.png' %}" alt="logo"
+                        style="width: 40%;margin: 10px; border-radius: 25px;">
+                </div>
+            </div>
+            <div class="row" style="display: flex; ">
+                <div 
+                    id="left"
+                    style="padding: 10px; flex: 1;">
+
+                    {% if img_obj %}
+                    <img src="\media\images\{{img_obj}}" alt="input" width = "400" height = "400"
+                        style=" border-radius: 25px; ">
+                    {% else %}
+                    <img src="{% static 'image/input.png' %}" alt="input" width = "400" height = "400"
+                        style=" border-radius: 25px; ">
+                    {% endif %}
+
+                </div>
+                <div
+                    id="right"
+                    style="padding: 10px; flex: 1;">
+
+                    {% if result %}
+                    <img src="\media\images\out.png" alt="output" width = "400" height = "400"
+                        style=" border-radius: 25px; ">
+                    {% else %}
+                    <img src="{% static 'image/output.png' %}" alt="input" width = "400" height = "400"
+                        style=" border-radius: 25px;">
+                    {% endif %}
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+
+</html>
