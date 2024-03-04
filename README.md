@@ -15,4 +15,4 @@ based on the generative prior, some methods project the degraded faces into a
 continuous infinite space via iterative latent optimization or discrete latent encoding.
 
 
-![alt text](/xlxys/codeFormer-blind-face-restoration/images/img1.png)
+![alt text](https://github.com/xlxys/codeFormer-blind-face-restoration/blob/main/img1.png?raw=true)
