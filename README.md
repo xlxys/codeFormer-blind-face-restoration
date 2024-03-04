@@ -1,3 +1,5 @@
+
+
 # INTRODUCTION
  Face images captured in the wild often suffer from various degradation such as
 compression, noise and blur which causes a loss of information.
@@ -11,3 +13,6 @@ These approaches often suffer from high sensitivity to degradation or limited pr
 expressiveness. This implies insufficient guidance for face restoration. Most recently
 based on the generative prior, some methods project the degraded faces into a
 continuous infinite space via iterative latent optimization or discrete latent encoding.
+
+
+![alt text](https://github.com/xlxys/codeFormer-blind-face-restoration/edit/main/README.md)
